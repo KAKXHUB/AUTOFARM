@@ -24,13 +24,31 @@ Tab:AddButton({
 game.Workspace.Spawns.Spawn1.CFrame = CFrame.new(-1558, 215, 9935)
 game.Workspace.Spawns.Spawn2.CFrame = CFrame.new(-1558, 215, 9935)
 game.Workspace.Spawns.Spawn3.CFrame = CFrame.new(-1558, 215, 9935)
-game.Workspace.Spawns.Spawn10.CFrame = CFrame.new(-1558, 215, 9935)
 game.Workspace.Spawns.Spawn4.CFrame = CFrame.new(-1558, 215, 9935)
 game.Workspace.Spawns.Spawn5.CFrame = CFrame.new(-1558, 215, 9935)
 game.Workspace.Spawns.Spawn6.CFrame = CFrame.new(-1558, 215, 9935)
 game.Workspace.Spawns.Spawn7.CFrame = CFrame.new(-1558, 215, 9935)
 game.Workspace.Spawns.Spawn8.CFrame = CFrame.new(-1558, 215, 9935)
 game.Workspace.Spawns.Spawn9.CFrame = CFrame.new(-1558, 215, 9935)
+game.Workspace.Spawns.Spawn10.CFrame = CFrame.new(-1558, 215, 9935)
+
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Reset Position",
+	Callback = function()
+game.Workspace.Spawns.Spawn1.CFrame = CFrame.new(-8, 213.710159, -296)
+game.Workspace.Spawns.Spawn2.CFrame = CFrame.new(-128, 213.710159, -753)
+game.Workspace.Spawns.Spawn3.CFrame = CFrame.new(45, 221.710159, -72)
+game.Workspace.Spawns.Spawn4.CFrame = CFrame.new(-237, 222.710159, -1108)
+game.Workspace.Spawns.Spawn5.CFrame = CFrame.new(-206, 221.710159, -110.5)
+game.Workspace.Spawns.Spawn6.CFrame = CFrame.new(-76, 212.710159, -892)
+game.Workspace.Spawns.Spawn7.CFrame = CFrame.new(-428, 213.710159, -154)
+game.Workspace.Spawns.Spawn8.CFrame = CFrame.new(-127, 217, -983.200012)
+game.Workspace.Spawns.Spawn9.CFrame = CFrame.new(720, 237, 1191.80005)
+game.Workspace.Spawns.Spawn10.CFrame = CFrame.new(-1281.5, 213.710159, -1353)
+
   	end    
 })
 
@@ -65,6 +83,8 @@ spawn(function()
     end
 end);
 
+--------------
+
 local Section2 = Tab:AddSection({
 	Name = "Player 2"
 })
@@ -75,3 +95,81 @@ Tab:AddButton({
       		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1558, 215, 9935);
   	end    
 })
+
+players = {}
+
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+
+   table.insert(players,v.Name)
+
+end
+
+Tab:AddDropdown({
+	Name = "Select Player",
+	Default = "",
+	Options = players,
+	Callback = function(SelectPlayer)
+		Select = SelectPlayer
+	end    
+})
+
+Tab:AddButton({
+	Name = "Teleport To Player",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Select].Character.HumanoidRootPart.CFrame
+  	end    
+})
+
+Tab:AddToggle({
+	Name = "Auto Teleport",
+	Default = false,
+	Callback = function(ATP)
+		AutoTeleport = ATP
+	end    
+})
+
+spawn(function()
+
+while wait() do
+
+if AutoTeleport then
+
+pcall(function()
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Select].Character.HumanoidRootPart.CFrame * CFrame.new(0,30,0)
+
+end)
+
+end
+
+end
+
+end)
+
+
+Tab:AddToggle({
+	Name = "Bring Player",
+	Default = false,
+	Callback = function(BP)
+		BringPlayer = BP
+	end    
+})
+
+spawn(function()
+
+while wait() do
+
+if BringPlayer then
+
+pcall(function()
+
+game.Players[Select].Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-3)
+
+end)
+
+end
+
+end
+
+end)
+
