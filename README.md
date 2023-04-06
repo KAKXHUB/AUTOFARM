@@ -187,7 +187,7 @@ local Section = Tab2:AddSection({
 
 Tab2:AddTextbox({
 	Name = "Hit Box Size",
-	Default = "default box input",
+	Default = "",
 	TextDisappear = true,
 	Callback = function(HBZ)
 		HitBoxSIZE = HBZ
