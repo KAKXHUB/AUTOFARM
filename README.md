@@ -36,6 +36,26 @@ game.Workspace.Spawns.Spawn10.CFrame = CFrame.new(-1558, 215, 9935)
 })
 
 Tab:AddButton({
+	Name = "Set Position(เลือกที่เกิดเอง)",
+	Callback = function()
+local Content = game.Players.LocalPlayer.Character.HumanoidRootPart.Position;
+    
+
+game.Workspace.Spawns.Spawn1.CFrame = CFrame.new(Content)
+game.Workspace.Spawns.Spawn2.CFrame = CFrame.new(Content)
+game.Workspace.Spawns.Spawn3.CFrame = CFrame.new(Content)
+game.Workspace.Spawns.Spawn4.CFrame = CFrame.new(Content)
+game.Workspace.Spawns.Spawn5.CFrame = CFrame.new(Content)
+game.Workspace.Spawns.Spawn6.CFrame = CFrame.new(Content)
+game.Workspace.Spawns.Spawn7.CFrame = CFrame.new(Content)
+game.Workspace.Spawns.Spawn8.CFrame = CFrame.new(Content)
+game.Workspace.Spawns.Spawn9.CFrame = CFrame.new(Content)
+game.Workspace.Spawns.Spawn10.CFrame = CFrame.new(Content)
+
+  	end    
+})
+
+Tab:AddButton({
 	Name = "Reset Position",
 	Callback = function()
 game.Workspace.Spawns.Spawn1.CFrame = CFrame.new(-8, 213.710159, -296)
@@ -83,7 +103,7 @@ spawn(function()
     end
 end);
 
---------------
+
 
 local Section2 = Tab:AddSection({
 	Name = "Player 2"
@@ -172,20 +192,99 @@ end
 end
 
 end)
-
 --------------------------------------
-
 local Tab2 = Window:MakeTab({
-	Name = "setting",
+	Name = "Auto Quest",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
 local Section = Tab2:AddSection({
+	Name = "Auto Compass"
+})
+
+Tab2:AddToggle({
+	Name = "Auto Sam Quest",
+	Default = false,
+	Callback = function(ASQ)
+		AutoSamQuest = ASQ
+	end    
+})
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if not AutoSamQuest then return end;
+            game.Workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim1");
+        end)
+    end
+end);
+
+
+Tab2:AddToggle({
+	Name = "Auto Compass Quest",
+	Default = false,
+	Callback = function(ASQ)
+		AutoCompassQuest = ASQ
+	end    
+})
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if not AutoCompassQuest then return end;
+            local Compass = game.Players.LocalPlayer.Backpack:FindFirstChild("Compass");
+            local Compass2 = game.Players.LocalPlayer.Character:FindFirstChild("Compass");
+            if Compass or Compass2 then
+                local OldPostiton = game.Players.LocalPlayer.Character.HumanoidRootPart.Position;
+                game.Players.LocalPlayer.Character.Humanoid:UnequipTools();
+                Compass.Parent = game.Players.LocalPlayer.Character;
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Compass.Poser.Value);
+                Compass:Activate();
+                wait(1);
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(OldPostiton);
+            end
+        end)
+    end
+end);
+
+Tab2:AddToggle({
+	Name = "Auto Unbox Box",
+	Default = false,
+	Callback = function(AUB)
+		AutoUnboxBox = AUB
+	end    
+})
+
+["ListOfBox"] = {"Common Box", "Uncommon Box", "Rare Box", "Ultra Rare Box"};
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if not AutoUnboxBox then return end;
+            for _, Value in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                if table.find(Cache.DevConfig["ListOfBox"], Value.Name) then
+                    game.Players.LocalPlayer.Character.Humanoid:UnequipTools();
+                    Value.Parent = game.Players.LocalPlayer.Character;
+                    Value:Activate();
+                end
+            end
+        end)
+    end
+end);
+--------------------------------------
+
+local Tab3 = Window:MakeTab({
+	Name = "setting",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab3:AddSection({
 	Name = "Hit Box"
 })
 
-Tab2:AddTextbox({
+Tab3:AddTextbox({
 	Name = "Hit Box Size",
 	Default = "",
 	TextDisappear = true,
@@ -194,7 +293,7 @@ Tab2:AddTextbox({
 	end	  
 })
 
-Tab2:AddToggle({
+Tab3:AddToggle({
 	Name = "Start Hit Box",
 	Default = false,
 	Callback = function(HP)
