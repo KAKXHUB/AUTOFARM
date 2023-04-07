@@ -324,6 +324,89 @@ spawn(function()
     end
 end)
 
+local Section = Tab3:AddSection({
+	Name = "Auto Attack"
+})
+
+--Tab3:AddToggle({
+--	Name = "Auto Attack",
+--	Default = false,
+--	Callback = function(AT)
+--		AuToAttackEE = AT
+--	end    
+--})
+
+--spawn(function()
+--    while wait() do
+--        pcall(function()
+--            if not AuToAttackEE then return end;
+--            game:GetService("VirtualUser"):ClickButton1(Vector2.new(99999, 99999));
+--        end)
+--    end
+--end);
+
+Tab3:AddToggle({
+	Name = "Click On Screen",
+	Default = false,
+	Callback = function(COS)
+		ClickOnScreenEE = COS
+	end    
+})
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if not ClickOnScreenEE then return end;
+            game:GetService("VirtualUser"):ClickButton1(Vector2.new(99999, 99999));
+        end)
+    end
+end);
+
+
+local Section = Tab3:AddSection({
+	Name = "Other"
+})
+
+Tab3:AddToggle({
+	Name = "Auto Spawn When Dead",
+	Default = false,
+	Callback = function(ASWD)
+		AutoSpawnWhenDead = ASWD
+	end    
+})
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if not AutoSpawnWhenDead or not game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible then return end;
+            wait(3);
+            firesignal(game.Players.LocalPlayer.PlayerGui.Load.Frame.Load.MouseButton1Click);
+        end)
+    end
+end);
+
+Tab3:AddToggle({
+	Name = "Auto Rejoin When Disconnect",
+	Default = false,
+	Callback = function(ARWD)
+		AutoRejounWhenDisconnect = ARWD
+	end    
+})
+
+spawn(function()
+	if AutoRejounWhenDisconnect then
+		repeat wait() until game:GetService("CoreGui"):FindFirstChild("promptOverlay", true) and game:GetService("CoreGui"):FindFirstChild("promptOverlay", true):FindFirstChild("ErrorPrompt");
+		repeat
+			game:GetService("TeleportService"):Teleport(game.PlaceId);
+			wait(5);
+		until not game.Players;
+	end
+end)
+
+
+
+-----------------------------------
+
 local Tab4 = Window:MakeTab({
 	Name = "Credit",
 	Icon = "rbxassetid://4483345998",
