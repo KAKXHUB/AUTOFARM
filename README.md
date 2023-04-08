@@ -147,6 +147,15 @@ Tab:AddDropdown({
 })
 
 Tab:AddButton({
+	Name = "Reset Select",
+	Callback = function()
+		if not Select then return end;
+		Select:NewList(GetlistNamePlayers());
+  	end    
+})
+
+
+Tab:AddButton({
 	Name = "Teleport To Player",
 	Callback = function()
       		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Select].Character.HumanoidRootPart.CFrame
