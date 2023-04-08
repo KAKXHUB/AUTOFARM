@@ -150,7 +150,7 @@ Tab:AddButton({
 	Name = "Reset Select",
 	Callback = function()
 		if not Select then return end;
-		Select:NewList(GetlistNamePlayers());
+		(Select):NewList(GetlistNamePlayers());
   	end    
 })
 
