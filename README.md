@@ -146,7 +146,7 @@ Tab:AddDropdown({
 	end    
 })
 
---Dropdown:Refresh(List<players>,true)
+
 
 Tab:AddButton({
 	Name = "Teleport To Player",
