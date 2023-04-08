@@ -146,14 +146,7 @@ Tab:AddDropdown({
 	end    
 })
 
-Tab:AddButton({
-	Name = "Reset Select",
-	Callback = function()
-		if not Select then return end;
-		(Select):NewList(players());
-  	end    
-})
-
+Dropdown:Refresh(List<players>,true)
 
 Tab:AddButton({
 	Name = "Teleport To Player",
