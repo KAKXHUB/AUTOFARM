@@ -525,3 +525,7 @@ local Section = Tab4:AddSection({
 local Section = Tab4:AddSection({
 	Name = "พี่เตอร์แก่"
 })
+
+local Section = Tab4:AddSection({
+	Name = "Copy kang kung"
+})
