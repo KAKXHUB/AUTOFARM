@@ -426,6 +426,7 @@ spawn(function()
     end
 end)
 
+
 local Section = Tab3:AddSection({
 	Name = "Auto Attack"
 })
@@ -440,21 +441,21 @@ Tab3:AddTextbox({
 	end	  
 })
 
-local value = WeaponName;
+local valuee = WeaponName;
 while wait(3) do
-	if value ~= WeaponName then
-		value = WeaponName;
+	if valuee ~= WeaponName then
+		valuee = WeaponName;
 	else
 		break;
 	end
 end;
 for _, Value in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-	if Value.ClassName == "Tool" and string.match(string.lower(Value.Name), string.lower(value)) then
+	if Value.ClassName == "Tool" and string.match(string.lower(Value.Name), string.lower(valuee)) then
 		return [WeaponName]:SetValue(Value.Name);
 	end
 end;
 for _, Value in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-	if Value.ClassName == "Tool" and string.match(string.lower(Value.Name), string.lower(value)) then
+	if Value.ClassName == "Tool" and string.match(string.lower(Value.Name), string.lower(valuee)) then
 		return [WeaponName]:SetValue(Value.Name);
 	end
 end;
@@ -512,6 +513,7 @@ spawn(function()
         end)
     end
 end);
+
 
 
 local Section = Tab3:AddSection({
