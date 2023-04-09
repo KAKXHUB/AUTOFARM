@@ -430,22 +430,71 @@ local Section = Tab3:AddSection({
 	Name = "Auto Attack"
 })
 
---Tab3:AddToggle({
---	Name = "Auto Attack",
---	Default = false,
---	Callback = function(AT)
---		AuToAttackEE = AT
---	end    
---})
 
---spawn(function()
---    while wait() do
---        pcall(function()
---            if not AuToAttackEE or not game.Players.LocalPlayer.Character:FindFirstChild(Options["Miscellaneous:Left 2:Auto Attack:Weapon Name"].Value) then return end;
- --           game.Players.LocalPlayer.Character[Options["Miscellaneous:Left 2:Auto Attack:Weapon Name"].Value]:Activate();
- --       end)
- --   end
---end);
+Tab3:AddTextbox({
+	Name = "Weapon Name",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(WPN)
+		WeaponName = WPN
+	end	  
+})
+
+local value = WeaponName;
+while wait(3) do
+	if value ~= WeaponName then
+		value = WeaponName;
+	else
+		break;
+	end
+end;
+for _, Value in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+	if Value.ClassName == "Tool" and string.match(string.lower(Value.Name), string.lower(value)) then
+		return [WeaponName]:SetValue(Value.Name);
+	end
+end;
+for _, Value in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+	if Value.ClassName == "Tool" and string.match(string.lower(Value.Name), string.lower(value)) then
+		return [WeaponName]:SetValue(Value.Name);
+	end
+end;
+
+Tab3:AddToggle({
+	Name = "Equip Weapon",
+	Default = false,
+	Callback = function(EQW)
+		EquipWeapon = EQW
+	end    
+})
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if not EquipWeapon or not game.Players.LocalPlayer.Backpack:FindFirstChild(WeaponName) then return end;
+            if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Name ~= WeaponName then
+                game.Players.LocalPlayer.Character.Humanoid:UnequipTools();
+            end
+            game.Players.LocalPlayer.Backpack[WeaponName].Parent = game.Players.LocalPlayer.Character;
+        end)
+    end
+end);
+
+Tab3:AddToggle({
+	Name = "Activate Weapon",
+	Default = false,
+	Callback = function(ATW)
+		ActivateWeapon = ATW
+	end    
+})
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if not ActivateWeapon or not game.Players.LocalPlayer.Character:FindFirstChild(WeaponName) then return end;
+            game.Players.LocalPlayer.Character[WeaponName]:Activate();
+        end)
+    end
+end);
 
 Tab3:AddToggle({
 	Name = "Click On Screen",
@@ -463,6 +512,7 @@ spawn(function()
         end)
     end
 end);
+
 
 local Section = Tab3:AddSection({
 	Name = "Other"
