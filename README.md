@@ -480,22 +480,22 @@ spawn(function()
     end
 end);
 
-Tab3:AddToggle({
-	Name = "Activate Weapon",
-	Default = false,
-	Callback = function(ATW)
-		ActivateWeapon = ATW
-	end    
-})
+--Tab3:AddToggle({
+--	Name = "Activate Weapon",
+--	Default = false,
+--	Callback = function(ATW)
+--		ActivateWeapon = ATW
+--	end    
+--})
 
-spawn(function()
-    while wait() do
-        pcall(function()
-            if not ActivateWeapon or not game.Players.LocalPlayer.Character:FindFirstChild(WeaponName) then return end;
-            game.Players.LocalPlayer.Character[WeaponName]:Activate();
-        end)
-    end
-end);
+--spawn(function()
+--    while wait() do
+--        pcall(function()
+--            if not ActivateWeapon or not game.Players.LocalPlayer.Character:FindFirstChild(WeaponName) then return end;
+--            game.Players.LocalPlayer.Character[WeaponName]:Activate();
+--        end)
+--    end
+--end);
 
 Tab3:AddToggle({
 	Name = "Click On Screen",
