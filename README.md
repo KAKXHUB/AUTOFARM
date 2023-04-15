@@ -517,3 +517,7 @@ local Section = Tab4:AddSection({
 local Section = Tab4:AddSection({
 	Name = "Copy kang kung"
 })
+
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
+    v:Disable()
+end
