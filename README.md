@@ -22,7 +22,7 @@ local Section = Tab:AddSection({
 
 OrionLib:MakeNotification({
 	Name = "Title!",
-	Content = "Notification content... what will it say??",
+	Content = "enjoy EZ NOOB GAY",
 	Image = "rbxassetid://4483345998",
 	Time = 5
 })
