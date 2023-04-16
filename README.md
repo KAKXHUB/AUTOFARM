@@ -207,6 +207,52 @@ end
 end
 
 end)
+
+Tab:AddToggle({
+	Name = "View Player",
+	Default = false,
+	Callback = function(VP)
+		ViewPlayer = VP
+	end    
+})
+
+spawn(function()
+
+while wait() do
+
+if ViewPlayer then
+
+pcall(function()
+
+game.Workspace.CurrentCamera.CameraSubject = game.Players[Select].Character.Humanoid;
+
+end)
+
+end
+
+end
+
+end)
+
+spawn(function()
+
+while wait() do
+    
+if not ViewPlayer then
+    
+pcall(function()
+    
+game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid;
+    
+end)
+    
+end
+    
+end
+    
+end)
+
+
 --------------------------------------
 local Tab2 = Window:MakeTab({
 	Name = "Auto Quest",
