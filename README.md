@@ -1,3 +1,5 @@
+--AUTOFARM SCRIPT
+
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "AutoFarmOPL", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
@@ -425,6 +427,327 @@ spawn(function()
 end);
 
 --------------------------------------
+local TabSpamSkill1 = Window:MakeTab({
+	Name = "Spam Skill",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = TabSpamSkill1:AddSection({
+	Name = "Version 1"
+})
+
+TabSpamSkill1:AddButton({
+	Name = "Rumble",
+	Callback = function()
+		while wait(0.1) do
+			local plr = game:GetService("Players").LocalPlayer
+			plr.Character.Powers.Rumble.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Rumble)["VTCzyhf"],"RumblePower4","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+		end
+  	end    
+})
+
+TabSpamSkill1:AddButton({
+	Name = "Dark",
+	Callback = function()
+		while wait(0.1) do
+			local plr = game:GetService("Players").LocalPlayer
+			plr.Character.Powers.Dark.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark)["VTCjebaj"],"DarkPower4","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+		end
+  	end    
+})
+
+TabSpamSkill1:AddButton({
+	Name = "Light",
+	Callback = function()
+		while wait(0.1) do
+			local plr = game:GetService("Players").LocalPlayer
+			plr.Character.Powers.Light.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light)["VTCrv"],"LightPower2","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+		end
+  	end    
+})
+
+TabSpamSkill1:AddButton({
+	Name = "Magma",
+	Callback = function()
+		while wait(0.1) do
+			local plr = game:GetService("Players").LocalPlayer
+			plr.Character.Powers.Magma.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma)["VTCmel"],"MagmaPower1","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+		end
+  	end    
+})
+
+TabSpamSkill1:AddButton({
+	Name = "Flare",
+	Callback = function()
+		while wait(0.1) do
+			local plr = game:GetService("Players").LocalPlayer
+			plr.Character.Powers.Flare.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare)["VTCmgwcm"],"FlarePower2","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+		end
+  	end    
+})
+
+TabSpamSkill1:AddButton({
+	Name = "Bomb",
+	Callback = function()
+		while wait(0.1) do
+			local plr = game:GetService("Players").LocalPlayer
+			plr.Character.Powers.Bomb.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb)["VTCcpkghc"],"BombPower5","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+		end
+  	end    
+})
+
+TabSpamSkill1:AddButton({
+	Name = "Gas",
+	Callback = function()
+		while wait(0.1) do
+			local plr = game:GetService("Players").LocalPlayer
+			plr.Character.Powers.Gas.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gas)["VTCtb"],"GasPower4","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+		end
+  	end    
+})
+
+TabSpamSkill1:AddButton({
+	Name = "Phoenix",
+	Callback = function()
+		while wait(0.1) do
+			local plr = game:GetService("Players").LocalPlayer
+			plr.Character.Powers.Phoenix.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix)["VTCytb"],"PhoenixPower3","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+		end
+  	end    
+})
+
+
+TabSpamSkill1:AddButton({
+	Name = "Chilly",
+	Callback = function()
+		while wait(0.1) do
+			local plr = game:GetService("Players").LocalPlayer
+			plr.Character.Powers.Chilly.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly)["VTCewddsfe"],"ChillyPower5","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+			end
+  	end    
+})
+
+TabSpamSkill1:AddButton({
+	Name = "Vampire",
+	Callback = function()
+		while wait(0.1) do
+			local plr = game:GetService("Players").LocalPlayer
+			plr.Character.Powers.Vampire.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.ChiVampirelly)["VTCjwf"],"VampirePower5","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+		end
+  	end    
+})
+
+local Section = TabSpamSkill1:AddSection({
+	Name = "Version 2"
+})
+
+TabSpamSkill1:AddToggle({
+	Name = "Rumble",
+	Default = false,
+	Callback = function(HP)
+		SpamTeleport = a   
+	end    
+})
+
+spawn(function()
+	while wait() do
+	if SpamTeleport then
+	pcall(function()
+	local plr = game:GetService("Players").LocalPlayer
+	plr.Character.Powers.Rumble.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Rumble)["VTCzyhf"],"RumblePower10","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+	end)
+	end
+	end
+end)
+
+TabSpamSkill1:AddToggle({
+	Name = "Dark",
+	Default = false,
+	Callback = function(HP)
+		SpamTeleport1 = a 
+	end    
+})
+
+spawn(function()
+	while wait() do
+	if SpamTeleport1 then
+	pcall(function()
+	local plr = game:GetService("Players").LocalPlayer
+	plr.Character.Powers.Dark.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Dark)["VTCjebaj"],"DarkPower10","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+	end)
+	end
+	end
+end)
+
+TabSpamSkill1:AddToggle({
+	Name = "Light",
+	Default = false,
+	Callback = function(HP)
+		SpamTeleport2 = a
+	end    
+})
+
+spawn(function()
+	while wait() do
+	if SpamTeleport2 then
+	pcall(function()
+	local plr = game:GetService("Players").LocalPlayer
+	plr.Character.Powers.Light.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Light)["VTCrv"],"LightPower8","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+	end)
+	end
+	end
+end)
+
+TabSpamSkill1:AddToggle({
+	Name = "Magma",
+	Default = false,
+	Callback = function(HP)
+		SpamTeleport3 = a
+	end    
+})
+
+spawn(function()
+	while wait() do
+	if SpamTeleport3 then
+	pcall(function()
+	local plr = game:GetService("Players").LocalPlayer
+	plr.Character.Powers.Magma.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Magma)["VTCmel"],"MagmaPower7","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+	end)
+	end
+	end
+end)
+
+TabSpamSkill1:AddToggle({
+	Name = "Flare",
+	Default = false,
+	Callback = function(HP)
+		SpamTeleport4 = a
+	end    
+})
+
+spawn(function()
+	while wait() do
+	if SpamTeleport4 then
+	pcall(function()
+	local plr = game:GetService("Players").LocalPlayer
+	plr.Character.Powers.Flare.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Flare)["VTCmgwcm"],"FlarePower8","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+	end)
+	end
+	end
+end)
+
+TabSpamSkill1:AddToggle({
+	Name = "Bomb",
+	Default = false,
+	Callback = function(HP)
+		SpamTeleport5 = a
+	end    
+})
+
+spawn(function()
+	while wait() do
+	if SpamTeleport5 then
+	pcall(function()
+	local plr = game:GetService("Players").LocalPlayer
+	plr.Character.Powers.Bomb.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb)["VTCcpkghc"],"BombPower11","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+	end)
+	end
+	end
+end)
+
+TabSpamSkill1:AddToggle({
+	Name = "Gas",
+	Default = false,
+	Callback = function(HP)
+		SpamTeleport6 = a 
+	end    
+})
+
+spawn(function()
+	while wait() do
+	if SpamTeleport6 then
+	pcall(function()
+	local plr = game:GetService("Players").LocalPlayer
+	plr.Character.Powers.Gas.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Gas)["VTCtb"],"GasPower10","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+	end)
+	end
+	end
+end)
+
+TabSpamSkill1:AddToggle({
+	Name = "Phoenix",
+	Default = false,
+	Callback = function(HP)
+		SpamTeleport7 = a 
+	end    
+})
+
+spawn(function()
+	while wait() do
+	if SpamTeleport7 then
+	pcall(function()
+	local plr = game:GetService("Players").LocalPlayer
+	plr.Character.Powers.Phoenix.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Phoenix)["VTCytb"],"PhoenixPower9","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+	end)
+	end
+	end
+end)
+
+TabSpamSkill1:AddToggle({
+	Name = "Chilly",
+	Default = false,
+	Callback = function(HP)
+		SpamTeleport8 = a 
+	end    
+})
+
+spawn(function()
+	while wait() do
+	if SpamTeleport8 then
+	pcall(function()
+	local plr = game:GetService("Players").LocalPlayer
+	plr.Character.Powers.Chilly.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Chilly)["VTCewddsfe"],"ChillyPower11","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+	end)
+	end
+	end
+end)
+
+TabSpamSkill1:AddToggle({
+	Name = "Vampire",
+	Default = false,
+	Callback = function(HP)
+		SpamTeleport9 = a 
+	end    
+})
+
+spawn(function()
+	while wait() do
+	if SpamTeleport9 then
+	pcall(function()
+	local plr = game:GetService("Players").LocalPlayer
+	plr.Character.Powers.Vampire.RemoteEvent:FireServer(getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Vampire)["VTCjwf"],"VampirePower11","StopCharging",plr.Character.HumanoidRootPart.CFrame,workspace.IslandSnowyMountains.Stone.Stone,100)
+	end)
+	end  
+	end
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------
 
 local Tab3 = Window:MakeTab({
 	Name = "setting",
@@ -538,7 +861,16 @@ spawn(function()
 	end
 end)
 
+local Section = Tab3:AddSection({
+	Name = "Get"
+})
 
+Tab3:AddButton({
+	Name = "Get Seastone Cestus <Need Max Melee>",
+	Callback = function()
+		game.Workspace.UserData["User_"..game.Players.LocalPlayer.UserId].UpdateMelee:FireServer("Seastone Cestus");
+  	end    
+})
 
 -----------------------------------
 
