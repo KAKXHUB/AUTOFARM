@@ -545,7 +545,7 @@ local Section = TabSpamSkill1:AddSection({
 TabSpamSkill1:AddToggle({
 	Name = "Rumble",
 	Default = false,
-	Callback = function(HP)
+	Callback = function(a)
 		SpamTeleport = a   
 	end    
 })
@@ -564,7 +564,7 @@ end)
 TabSpamSkill1:AddToggle({
 	Name = "Dark",
 	Default = false,
-	Callback = function(HP)
+	Callback = function(a)
 		SpamTeleport1 = a 
 	end    
 })
@@ -583,7 +583,7 @@ end)
 TabSpamSkill1:AddToggle({
 	Name = "Light",
 	Default = false,
-	Callback = function(HP)
+	Callback = function(a)
 		SpamTeleport2 = a
 	end    
 })
@@ -602,7 +602,7 @@ end)
 TabSpamSkill1:AddToggle({
 	Name = "Magma",
 	Default = false,
-	Callback = function(HP)
+	Callback = function(a)
 		SpamTeleport3 = a
 	end    
 })
@@ -621,7 +621,7 @@ end)
 TabSpamSkill1:AddToggle({
 	Name = "Flare",
 	Default = false,
-	Callback = function(HP)
+	Callback = function(a)
 		SpamTeleport4 = a
 	end    
 })
@@ -640,7 +640,7 @@ end)
 TabSpamSkill1:AddToggle({
 	Name = "Bomb",
 	Default = false,
-	Callback = function(HP)
+	Callback = function(a)
 		SpamTeleport5 = a
 	end    
 })
@@ -659,7 +659,7 @@ end)
 TabSpamSkill1:AddToggle({
 	Name = "Gas",
 	Default = false,
-	Callback = function(HP)
+	Callback = function(a)
 		SpamTeleport6 = a 
 	end    
 })
@@ -678,7 +678,7 @@ end)
 TabSpamSkill1:AddToggle({
 	Name = "Phoenix",
 	Default = false,
-	Callback = function(HP)
+	Callback = function(a)
 		SpamTeleport7 = a 
 	end    
 })
@@ -697,7 +697,7 @@ end)
 TabSpamSkill1:AddToggle({
 	Name = "Chilly",
 	Default = false,
-	Callback = function(HP)
+	Callback = function(a)
 		SpamTeleport8 = a 
 	end    
 })
@@ -716,7 +716,7 @@ end)
 TabSpamSkill1:AddToggle({
 	Name = "Vampire",
 	Default = false,
-	Callback = function(HP)
+	Callback = function(a)
 		SpamTeleport9 = a 
 	end    
 })
