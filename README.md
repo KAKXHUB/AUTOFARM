@@ -453,13 +453,14 @@ spawn(function()
                     fireclickdetector(Value.ClickDetector);
                 end
             end;
+			fireclickdetector(workspace.Island8.Kitchen.Folder.Model.JuicingBowl.Bowl.ClickDetector)
             wait(0.1);
             for _, v in pairs(game:GetService("Workspace").Island8.Kitchen:GetChildren()) do
                 if v.Name == "Folder" and v:FindFirstChild("JuicingBowl") then
                     fireclickdetector(v.JuicingBowl.Bowl.ClickDetector);
                 end
             end;
-			fireclickdetector(workspace.Island8.Kitchen.Folder.Model.JuicingBowl.Bowl.ClickDetector)
+			
         end)
     end
 end);
