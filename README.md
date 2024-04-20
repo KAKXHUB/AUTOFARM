@@ -426,6 +426,108 @@ spawn(function()
     end
 end);
 
+Tab2:AddToggle({
+	Name = "Auto Farm Juice",
+	Default = false,
+	Callback = function(AFJI)
+		Autofarmjuice = AFJI
+	end    
+})
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if not Autofarmjuice then return end;
+            for _, Value in pairs(game:GetService("Workspace").Barrels.Crates:GetChildren()) do
+                if Value:FindFirstChild("ClickDetector") then
+                    fireclickdetector(Value.ClickDetector);
+                end
+            end;
+            for _, Value in pairs(game:GetService("Workspace").Barrels.Barrels:GetChildren()) do
+                if Value:FindFirstChild("ClickDetector") then
+                    fireclickdetector(Value.ClickDetector);
+                end
+            end;
+            wait(0.1);
+            for _, v in pairs(game:GetService("Workspace").Island8.Kitchen:GetChildren()) do
+                if v.Name == "Folder" and v:FindFirstChild("JuicingBowl") then
+                    fireclickdetector(v.JuicingBowl.Bowl.ClickDetector);
+                end
+            end;
+        end)
+    end
+end);
+
+Tab2:AddToggle({
+	Name = "Auto Drink Everything",
+	Default = false,
+	Callback = function(ADET)
+		AutodrinkEverything = ADET
+	end    
+})
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if not AutodrinkEverything then return end;
+            for _, Value in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                for _, ValueFormList in pairs(Cache.DevConfig["ListOfDrinkFormMixer"]) do
+                    if string.match(Value.Name, ValueFormList) then
+                        game.Players.LocalPlayer.Character.Humanoid:UnequipTools();
+                        Value.Parent = game.Players.LocalPlayer.Character;
+                        Value:Activate();
+                        spawn(function()
+                            wait(20);
+                            Value:Destroy();
+                        end)
+                    end
+                end
+                wait();
+            end
+        end)
+    end
+end);
+
+local Section = Tab2:AddSection({
+	Name = "Auto Claim"
+})
+
+Tab2:AddToggle({
+	Name = "Auto Claim Hourly Reward",
+	Default = false,
+	Callback = function(ACHR)
+		AutoClaimHR = ACHR
+	end    
+})
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if not AutoClaimHR then return end;
+            game.Workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].ClaimRewardHourly:FireServer("RewardMark");
+        end)
+    end
+end);
+
+Tab2:AddToggle({
+	Name = "Auto Claim Daily Reward",
+	Default = false,
+	Callback = function(ACDR)
+		AutoClaimDR = ACDR
+	end    
+})
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if not AutoClaimDR then return end;
+            game.Workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].ClaimRewardDaily:FireServer("RewardMark");
+        end)
+    end
+end);
+
+
+
 --------------------------------------
 local TabSpamSkill1 = Window:MakeTab({
 	Name = "Spam Skill",
@@ -733,14 +835,20 @@ spawn(function()
 end)
 
 
+-------------------------------------
+--[[
+local TabFarmmon = Window:MakeTab({
+	Name = "Farming Monter",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = TabFarmmon:AddSection({
+	Name = "Bring Monter"
+})
 
 
-
-
-
-
-
-
+]]--
 
 
 
