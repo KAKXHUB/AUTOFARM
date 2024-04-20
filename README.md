@@ -438,6 +438,11 @@ spawn(function()
     while wait() do
         pcall(function()
             if not Autofarmjuice then return end;
+			local Plr = game.Players.LocalPlayer.Character.HumanoidRootPart
+            for i,v in pairs(workspace.Barrels.Barrels:GetChildren()) do
+            Plr.CFrame = v.CFrame
+            wait(0.2)
+            end
             for _, Value in pairs(game:GetService("Workspace").Barrels.Crates:GetChildren()) do
                 if Value:FindFirstChild("ClickDetector") then
                     fireclickdetector(Value.ClickDetector);
@@ -454,6 +459,7 @@ spawn(function()
                     fireclickdetector(v.JuicingBowl.Bowl.ClickDetector);
                 end
             end;
+			fireclickdetector(workspace.Island8.Kitchen.Folder.Model.JuicingBowl.Bowl.ClickDetector)
         end)
     end
 end);
