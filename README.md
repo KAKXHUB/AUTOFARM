@@ -438,11 +438,11 @@ spawn(function()
     while wait() do
         pcall(function()
             if not Autofarmjuice then return end;
-			local Plr = game.Players.LocalPlayer.Character.HumanoidRootPart
+			--[[local Plr = game.Players.LocalPlayer.Character.HumanoidRootPart
             for i,v in pairs(workspace.Barrels.Barrels:GetChildren()) do
             Plr.CFrame = v.CFrame
             
-            end
+            end]]
             for _, Value in pairs(game:GetService("Workspace").Barrels.Crates:GetChildren()) do
                 if Value:FindFirstChild("ClickDetector") then
                     fireclickdetector(Value.ClickDetector);
