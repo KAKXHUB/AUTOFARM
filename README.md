@@ -441,7 +441,7 @@ spawn(function()
 			local Plr = game.Players.LocalPlayer.Character.HumanoidRootPart
             for i,v in pairs(workspace.Barrels.Barrels:GetChildren()) do
             Plr.CFrame = v.CFrame
-            wait(0.2)
+            
             end
             for _, Value in pairs(game:GetService("Workspace").Barrels.Crates:GetChildren()) do
                 if Value:FindFirstChild("ClickDetector") then
@@ -453,8 +453,9 @@ spawn(function()
                     fireclickdetector(Value.ClickDetector);
                 end
             end;
-	    fireclickdetector(workspace.Island8.Kitchen.Folder.Model.JuicingBowl.Bowl.ClickDetector)
+			fireclickdetector(workspace.Island8.Kitchen.Folder.Model.JuicingBowl.Bowl.ClickDetector)
             wait(0.1);
+			fireclickdetector(workspace.Island8.Kitchen.Folder.Model.JuicingBowl.Bowl.ClickDetector)
             for _, v in pairs(game:GetService("Workspace").Island8.Kitchen:GetChildren()) do
                 if v.Name == "Folder" and v:FindFirstChild("JuicingBowl") then
                     fireclickdetector(v.JuicingBowl.Bowl.ClickDetector);
