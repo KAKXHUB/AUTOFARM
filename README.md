@@ -977,6 +977,27 @@ spawn(function()
 	end
 end)
 
+Tab3:AddButton({
+	Name = "Rejoin",
+	Callback = function()
+		local TeleportService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+ 
+local Rejoin = coroutine.create(function()
+    local Success, ErrorMessage = pcall(function()
+        TeleportService:Teleport(game.PlaceId, LocalPlayer)
+    end)
+ 
+    if ErrorMessage and not Success then
+        warn(ErrorMessage)
+    end
+end)
+ 
+coroutine.resume(Rejoin)
+  	end    
+})
+
 local Section = Tab3:AddSection({
 	Name = "Get"
 })
