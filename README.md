@@ -87,20 +87,19 @@ Tab:AddToggle({
 	Name = "Start Autodie",
 	Default = false,
 	Callback = function(Value)
-	AuTODie = Value 
-	if Value then
-		local player = game.Players.LocalPlayer
-        local character = player.Character or player.CharacterAdded:Wait()
-        local humanoid = character:FindFirstChildOfClass("Humanoid")
+	    AuTODie = Value 
+	    if Value then
+		    local player = game.Players.LocalPlayer
+            local character = player.Character or player.CharacterAdded:Wait()
+            local humanoid = character:FindFirstChildOfClass("Humanoid")
 
-        if humanoid then
-            humanoid.Health = 0
-        end
+            if humanoid then
+                humanoid.Health = 0
+            end
 --for _ = 1, 12 do
 --            game.Players.LocalPlayer.Character.Drown:FireServer("NOPLS");
         end
-    end
-	end    
+    end   
 })
 
 
@@ -114,12 +113,20 @@ spawn(function()
             repeat wait() until not game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible;
             wait(3);
             repeat
-                game.Players.LocalPlayer.Character.Drown:FireServer("NOPLS");
+				local player = game.Players.LocalPlayer
+                local character = player.Character or player.CharacterAdded:Wait()
+                local humanoid = character:FindFirstChildOfClass("Humanoid")
+
+                if humanoid then
+                    humanoid.Health = 0
+                end
+                ---game.Players.LocalPlayer.Character.Drown:FireServer("NOPLS");
                 wait(0.1);
             until game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible;
         end)
     end
 end);
+
 
 
 
