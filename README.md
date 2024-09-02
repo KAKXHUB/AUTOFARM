@@ -89,8 +89,15 @@ Tab:AddToggle({
 	Callback = function(Value)
 	AuTODie = Value 
 	if Value then
-for _ = 1, 12 do
-            game.Players.LocalPlayer.Character.Drown:FireServer("NOPLS");
+		local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
+        local humanoid = character:FindFirstChildOfClass("Humanoid")
+
+        if humanoid then
+            humanoid.Health = 0
+        end
+--for _ = 1, 12 do
+--            game.Players.LocalPlayer.Character.Drown:FireServer("NOPLS");
         end
     end
 	end    
