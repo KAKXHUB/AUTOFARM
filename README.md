@@ -109,6 +109,32 @@ spawn(function()
         pcall(function()
             if not AuTODie or not game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible then return end;
             wait(3);
+			game.Players.LocalPlayer.Character.CamScript.ClientServerClient:FireServer()
+            game.Players.LocalPlayer.Character.Weapons:FireServer()
+            game.Players.LocalPlayer.Character.CharacterTrait.ClothingTrigger:FireServer()
+
+            wait(2)
+
+            local player = game.Players.LocalPlayer
+            local character = player.Character or player.CharacterAdded:Wait()
+            local humanoid = character:FindFirstChildOfClass("Humanoid")
+
+            if humanoid then
+                humanoid.Health = 0
+            end
+        end)
+    end
+end);
+
+
+
+--[[
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if not AuTODie or not game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible then return end;
+            wait(3);
             firesignal(game.Players.LocalPlayer.PlayerGui.Load.Frame.Load.MouseButton1Click);
             repeat wait() until not game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible;
             wait(3);
@@ -125,7 +151,8 @@ spawn(function()
             until game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible;
         end)
     end
-end);
+end);]]
+
 
 
 
