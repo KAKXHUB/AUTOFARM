@@ -83,12 +83,13 @@ game.Workspace.Spawns.Spawn10.CFrame = CFrame.new(-1281.5, 213.710159, -1353)
   	end    
 })
 
+
 Tab:AddToggle({
 	Name = "Start Autodie",
 	Default = false,
 	Callback = function(Value)
 	    AuTODie = Value 
-	    if Value then
+	    --[[if Value then
 		    local player = game.Players.LocalPlayer
             local character = player.Character or player.CharacterAdded:Wait()
             local humanoid = character:FindFirstChildOfClass("Humanoid")
@@ -97,23 +98,22 @@ Tab:AddToggle({
                 humanoid.Health = 0
             end
 --for _ = 1, 12 do
---            game.Players.LocalPlayer.Character.Drown:FireServer("NOPLS");
-        end
+            --game.Players.LocalPlayer.Character.DrownServerV3:FireServer("NOPLS");
+        end]]
     end   
 })
-
 
 
 spawn(function()
     while wait() do
         pcall(function()
             if not AuTODie or not game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible then return end;
-            wait(3);
+            wait(4);
 			game.Players.LocalPlayer.Character.CamScript.ClientServerClient:FireServer()
             game.Players.LocalPlayer.Character.Weapons:FireServer()
             game.Players.LocalPlayer.Character.CharacterTrait.ClothingTrigger:FireServer()
 
-            wait(2)
+            wait(3)
 
             local player = game.Players.LocalPlayer
             local character = player.Character or player.CharacterAdded:Wait()
@@ -125,6 +125,7 @@ spawn(function()
         end)
     end
 end);
+
 
 
 
