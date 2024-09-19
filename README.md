@@ -390,15 +390,6 @@ Tab2:AddToggle({
 })
 
 
-Tab2:AddToggle({
-	Name = "Loot Fruit",
-	Default = false,
-	Callback = function(LDF)
-		LootDevillFruit = LDF
-	end    
-})
-
-
 spawn(function()
     while wait() do
         pcall(function()
