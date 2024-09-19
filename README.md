@@ -389,6 +389,14 @@ Tab2:AddToggle({
 	end    
 })
 
+Tab2:AddToggle({
+	Name = "Loot Fruit",
+	Default = false,
+	Callback = function(LDF)
+		LootDevillFruit = LDF
+	end    
+})
+
 
 spawn(function()
     while wait() do
@@ -399,24 +407,17 @@ spawn(function()
                         fireclickdetector(v.Main.ClickDetector)
                     end
                 end
-            end
-            if LootDevillFruit then
                 for i, v in pairs(game.Workspace:GetChildren()) do
                     if string.match(v.Name, "Box") and v:FindFirstChild("Handle") then
                         v.Handle.CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)
                     end
                 end
-            end
-            if LootDevillFruit then
-                for i, v in pairs(game.Workspace:GetChildren()) do
-                    if v.Name == "Compass" and v:FindFirstChild("Handle") then
-                        v.Handle.CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)
-                    end
-                end
-            end
         end)
     end
 end);
+
+
+
 
 
 local Section = Tab2:AddSection({
