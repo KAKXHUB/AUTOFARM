@@ -381,13 +381,6 @@ end);
 
 
 
-Tab2:AddToggle({
-	Name = "Loot Fruit",
-	Default = false,
-	Callback = function(LDF)
-		LootDevillFruit = LDF
-	end    
-})
 
 Tab2:AddToggle({
 	Name = "Loot Fruit",
